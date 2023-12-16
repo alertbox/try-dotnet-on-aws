@@ -1,0 +1,104 @@
+{
+  "name": ".NET on Azure",
+  // See complete list https://hub.docker.com/_/microsoft-dotnet-sdk/
+  // Or https://mcr.microsoft.com/v2/dotnet/sdk/tags/list
+  "image": "mcr.microsoft.com/dotnet/sdk:8.0-bookworm-slim",
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [
+    // Http
+    8080,
+    // Https
+    8081
+  ],
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "root",
+  // Add more features. See complete list https://github.com/devcontainers/features
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "configureZshAsDefaultShell": true
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "moby": false,
+      "dockerDashComposeVersion": "v2"
+    },
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/azure-cli:1": {
+      "extensions": "azure-devops, containerapp, staticwebapp"
+    },
+    "ghcr.io/azure/azure-dev/azd:latest": {},
+    "ghcr.io/dapr/cli/dapr-cli:0": {},
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+      "minikube": "none"
+    },
+
+    // Read more https://github.com/hashicorp/vscode-terraform/issues/1524#issuecomment-1614892272
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "version": "latest",
+      "tflint": "latest",
+      "terragrunt": "latest"
+    }
+  },
+  "containerEnv": {
+    // Set dotnet CLI environment settings.
+    "DOTNET_RUNNING_IN_CONTAINER": "1",
+    "DOTNET_USE_POLLING_FILE_WATCHER": "1",
+    "DOTNET_CLI_TELEMETRY_OPTOUT": "1",
+    "DOTNET_GENERATE_ASPNET_CERTIFICATE": "1",
+    "DOTNET_NOLOGO": "1",
+    // Set ASP.NET environment settings.
+    "ASPNETCORE_URLS": "http://+:8080;https://+:8081",
+    "ASPNETCORE_ENVIRONMENT": "Development"
+  },
+  "remoteEnv": {
+    "TARGET": "net8.0"
+  },
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        // Read more https://github.com/microsoft/vscode-dotnettools/issues/562
+        // "ms-dotnettools.csdevkit",
+        "VisualStudioExptTeam.vscodeintellicode-insiders",
+        "ms-dotnettools.vscode-dotnet-runtime",
+        "ms-dotnettools.csharp",
+
+        "ms-vscode.vscode-node-azure-pack",
+        "ms-mssql.mssql",
+        "humao.rest-client",
+
+        "redhat.vscode-yaml",
+        "editorconfig.editorconfig",
+        "albert.tabout",
+        "streetsidesoftware.code-spell-checker",
+        "redhat.fabric8-analytics"
+      ],
+      // Set *default* container specific settings.json values on container create.
+      "settings": {
+        "bicep.enableSurveys": false,
+        "redhat.telemetry.enabled": false,
+        "rest-client.previewOption": "exchange",
+        // Fix for ARM-based devices.
+        // Read more https://github.com/OmniSharp/omnisharp-vscode/issues/4348#issuecomment-1003867594
+        "omnisharp.useModernNet": true,
+        "omnisharp.organizeImportsOnFormat": true,
+        "omnisharp.useEditorFormattingSettings": true,
+        "omnisharp.enableEditorConfigSupport": true,
+
+        "razor.disabled": true
+      }
+    }
+  },
+  // Use 'updateContentCommand' to run commands after the container is successfully created.
+  "updateContentCommand": {
+    "dev-certs": "dotnet dev-certs https --clean && dotnet dev-certs https -t",
+    "clean": "rm -rf **/bin **/obj"
+  },
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": {
+  //   "init": "dapr init",
+  //   "restore": "dotnet restore --no-cache --force"
+  // }
+}
