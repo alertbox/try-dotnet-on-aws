@@ -1,5 +1,5 @@
 {
-  "name": ".NET on Azure",
+  "name": ".NET on AWS",
   // See complete list https://hub.docker.com/_/microsoft-dotnet-sdk/
   // Or https://mcr.microsoft.com/v2/dotnet/sdk/tags/list
   "image": "mcr.microsoft.com/dotnet/sdk:8.0-bookworm-slim",
@@ -23,10 +23,14 @@
       "dockerDashComposeVersion": "v2"
     },
     "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/devcontainers/features/azure-cli:1": {
-      "extensions": "azure-devops, containerapp, staticwebapp"
+    "./local-features/npm-global": {
+      "packages": "serverless@latest"
     },
-    "ghcr.io/azure/azure-dev/azd:latest": {},
+    "ghcr.io/devcontainers/features/aws-cli:1": {},
+    "./local-features/serverless": {
+      "installToolsForDotnet": true
+    },
+
     "ghcr.io/dapr/cli/dapr-cli:0": {},
     "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
       "minikube": "none"
@@ -65,7 +69,10 @@
         "ms-dotnettools.vscode-dotnet-runtime",
         "ms-dotnettools.csharp",
 
-        "ms-vscode.vscode-node-azure-pack",
+        // HINT: Installed via aws-cli feature.
+        // "AmazonWebServices.aws-toolkit-vscode",
+
+        // "ms-vscode.vscode-node-azure-pack",
         "ms-mssql.mssql",
         "humao.rest-client",
 
@@ -77,6 +84,7 @@
       ],
       // Set *default* container specific settings.json values on container create.
       "settings": {
+        "aws.telemetry": true,
         "bicep.enableSurveys": false,
         "redhat.telemetry.enabled": false,
         "rest-client.previewOption": "exchange",
