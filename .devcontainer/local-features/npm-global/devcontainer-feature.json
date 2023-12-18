@@ -1,0 +1,16 @@
+{
+  "id": "npm-global",
+  "name": "NPM (or Yarn) Global Install",
+  "version": "1.0.0",
+  "description": "Install packages and CLI tools system-wide along with needed dependencies.",
+  "options": {
+    "packages": {
+      "type": "string",
+      "default": "",
+      "description": "Comma separated list of packages to install in system-wide."
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/node"
+  ]
+}
