@@ -20,17 +20,3 @@ echo "Activating feature 'serverless@${SLS_VERSION}'"
 #       curl -o- -L https://slss.io/install | VERSION=${SLS_VERSION} bash
 #   fi
 # fi
-
-# If AWS Tools for .NET are requested.
-# See https://aws.amazon.com/developer/language/net/tools/
-if [ "${INSTALL_AWS_TOOLS_FOR_DOTNET}" = "true" ]; then
-  echo "Installing .NET Tools for Amazon Lambdas..."
-  # Install .NET project templates
-  dotnet new -i Amazon.Lambda.Templates::*
-  # Install .NET CLI tools
-  dotnet tool install -g amazon.lambda.tools
-  dotnet tool install -g amazon.lambda.testtool-6.0
-
-  # List installed packages
-  dotnet tool list -g
-fi
