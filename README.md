@@ -1,6 +1,8 @@
 # Try .NET on AWS
 
-[<img align="right" alt=".NET C-sharp" width="128rem" src="https://raw.githubusercontent.com/github/explore/93d8a67084f94b2a444e510199a6e7622e5b09a3/topics/dotnet/dotnet.png" />][dotnet-quick-start]
+[<img align="right" alt="AWS Tools for .NET" width="96rem" src="https://raw.githubusercontent.com/github/explore/fbceb94436312b6dacde68d122a5b9c7d11f9524/topics/aws/aws.png" />][dotnet-quick-start]
+
+[<img align="right" alt=".NET C-sharp" width="96rem" src="https://raw.githubusercontent.com/github/explore/93d8a67084f94b2a444e510199a6e7622e5b09a3/topics/dotnet/dotnet.png" />][dotnet-quick-start]
 
 Start a dev container and get to developing .NET apps leveraging a [variety of Amazon services (or AWS)][aws-for-dotnet].
 
@@ -44,7 +46,6 @@ If you have any technical problems with dev containers, you are better off askin
 - https://github.com/omnisharp/omnisharp-vscode/issues/4348
 - https://github.com/devcontainers/features/issues/440
 - https://github.com/microsoft/vscode-dotnettools/issues/562
-- https://github.com/azure/azure-functions-core-tools/issues/3112
 
 
 
