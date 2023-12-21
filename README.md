@@ -1,16 +1,13 @@
 # Try .NET on AWS
 
-[<img align="center" width="90%" alt="AWS SDK for .NET" src="https://d1.awsstatic.com/sdks-and-tools/dotnetsdkmarchitecture.818fb6e4f8383ec71e644c3336d56d59b56dca71.png" />][dotnet-on-aws]
+Start a dev container and get to developing .NET apps leveraging a [variety of Amazon services (or AWS)][aws-dotnet-resources].
 
+[<img align="center" width="100%" alt="AWS SDK for .NET" src="https://github.com/alertbox/try-dotnet-on-aws/assets/958227/befa373d-72c1-4816-ade8-3abba3016b45" />][dotnet-quick-start]
 
+[Learn more about .NET on AWS][dotnet-quick-start]
 
-Start a dev container and get to developing .NET apps leveraging a [variety of Amazon services (or AWS)][dotnet-on-aws].
-
-> Originally, this dev container was created to tryout [.NET on Azure][dotnet-whats-new] without installing them on your computer.
-
+[aws-dotnet-resources]: https://github.com/aws/dotnet#readme
 [dotnet-quick-start]: https://aws.amazon.com/developer/language/net/getting-started/?developer-center-content-cards.sort-by=item.additionalFields.sortDate&developer-center-content-cards.sort-order=desc&awsf.tech-category=tech-category%23serverless
-[dotnet-on-aws]: https://github.com/aws/dotnet#readme
-[dotnet-whats-new]: https://github.com/alertbox/try-dotnet-on-azure/#readme
 
 
 
