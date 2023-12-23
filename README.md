@@ -1,14 +1,15 @@
 # Try .NET on AWS
 
-Start a dev container and get to developing .NET apps leveraging a [variety of Amazon services (or AWS)][aws-dotnet-resources].
+Start a dev container and get to developing .NET apps leveraging a [variety of Amazon services (or AWS)][aws-services-for-dotnet].
 
-[<img align="center" width="100%" alt="AWS SDK for .NET" src="https://github.com/alertbox/try-dotnet-on-aws/assets/958227/befa373d-72c1-4816-ade8-3abba3016b45" />][dotnet-quick-start]
+[<img width="100%" 
+      alt="AWS SDK for .NET" 
+      src="https://github.com/alertbox/try-dotnet-on-aws/assets/958227/befa373d-72c1-4816-ade8-3abba3016b45" />][aws-sdk-for-dotnet]
 
-[Learn more about .NET on AWS][dotnet-quick-start]
+[Learn more about AWS SDK for .NET][aws-sdk-for-dotnet]
 
-[aws-dotnet-resources]: https://github.com/aws/dotnet#readme
-[dotnet-quick-start]: https://aws.amazon.com/developer/language/net/getting-started/?developer-center-content-cards.sort-by=item.additionalFields.sortDate&developer-center-content-cards.sort-order=desc&awsf.tech-category=tech-category%23serverless
-
+[aws-services-for-dotnet]: https://github.com/aws/dotnet#readme
+[aws-sdk-for-dotnet]: https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/welcome.html
 
 
 ## Quick Start
