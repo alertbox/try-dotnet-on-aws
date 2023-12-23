@@ -1,24 +1,20 @@
 # Try .NET on AWS
 
-[<img align="right" alt="AWS Tools for .NET" width="96rem" src="https://raw.githubusercontent.com/github/explore/fbceb94436312b6dacde68d122a5b9c7d11f9524/topics/aws/aws.png" />][dotnet-quick-start]
+Start a dev container and get to developing .NET apps leveraging a [variety of Amazon services (or AWS)][aws-services-for-dotnet].
 
-[<img align="right" alt=".NET C-sharp" width="96rem" src="https://raw.githubusercontent.com/github/explore/93d8a67084f94b2a444e510199a6e7622e5b09a3/topics/dotnet/dotnet.png" />][dotnet-quick-start]
+[<img width="100%" 
+      alt="AWS SDK for .NET" 
+      src="https://github.com/alertbox/try-dotnet-on-aws/assets/958227/befa373d-72c1-4816-ade8-3abba3016b45" />][aws-sdk-for-dotnet]
 
-Start a dev container and get to developing .NET apps leveraging a [variety of Amazon services (or AWS)][aws-for-dotnet].
+[Learn more about AWS SDK for .NET][aws-sdk-for-dotnet]
 
-> Originally, this dev container was created to tryout [what's new in .NET on Azure][dotnet-whats-new] without installing them on your computer.
-
-[dotnet-quick-start]: https://aws.amazon.com/developer/language/net/getting-started/?developer-center-content-cards.sort-by=item.additionalFields.sortDate&developer-center-content-cards.sort-order=desc&awsf.tech-category=tech-category%23serverless
-[aws-for-dotnet]: https://aws.amazon.com/developer/language/net/getting-started/?developer-center-content-cards.sort-by=item.additionalFields.sortDate&developer-center-content-cards.sort-order=desc&awsf.tech-category=tech-category%23serverless
-[dotnet-whats-new]: https://github.com/alertbox/try-dotnet-on-azure/#readme
-
+[aws-services-for-dotnet]: https://github.com/aws/dotnet#readme
+[aws-sdk-for-dotnet]: https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/welcome.html
 
 
 ## Quick Start
 
 [![Open in Dev Container](https://img.shields.io/static/v1?style=for-the-badge&label=Dev+Container&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/alertbox/try-dotnet-on-aws)
-
-
 
 You can also run this repo locally by following these repetitive steps:
 
@@ -46,6 +42,7 @@ If you have any technical problems with dev containers, you are better off askin
 - https://github.com/omnisharp/omnisharp-vscode/issues/4348
 - https://github.com/devcontainers/features/issues/440
 - https://github.com/microsoft/vscode-dotnettools/issues/562
+- https://github.com/aws/aws-lambda-dotnet/issues/1611
 
 
 
