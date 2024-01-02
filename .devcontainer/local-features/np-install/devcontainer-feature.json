@@ -1,8 +1,8 @@
 {
-  "id": "npm-global",
-  "name": "NPM (or Yarn) Global Install",
+  "id": "np-install",
+  "name": "Node packages install",
   "version": "1.0.0",
-  "description": "Install packages and CLI tools system-wide along with needed dependencies.",
+  "description": "Install node packages and binaries system-wide along with needed dependencies.",
   "options": {
     "packages": {
       "type": "string",

@@ -23,7 +23,7 @@
       "dockerDashComposeVersion": "v2"
     },
     "ghcr.io/devcontainers/features/node:1": {},
-    "./local-features/npm-global": {
+    "./local-features/np-install": {
       "packages": "serverless@latest"
     },
     "ghcr.io/devcontainers/features/aws-cli:1": {},
