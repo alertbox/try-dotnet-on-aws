@@ -7,6 +7,7 @@ NODE_PACKAGES=${PACKAGES}
 echo "Activating feature 'np-install'."
 
 # The 'install.sh' entrypoint script is always executed as the root user.
+export DEBIAN_FRONTEND=noninteractive
 
 # If packages are requested, loop thru and install globally.
 if [ ${#NODE_PACKAGES[@]} -gt 0 ]; then
