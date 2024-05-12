@@ -1,8 +1,8 @@
 {
-  "id": "serverless",
-  "name": "Serverless Framework",
+  "id": "sam-cli",
+  "name": "AWS Serverless CLI (SAM)",
   "version": "1.0.0",
-  "description": "Installs the Serverless Framework CLI along with needed dependencies. Useful for .NET on AWS that often written as Lambda Functions.",
+  "description": "Installs the AWS Serverless CLI (SAM) along with needed dependencies. Useful for .NET on AWS that often written as Lambda Functions.",
   "options": {
     "version": {
       "type": "string",
@@ -11,12 +11,7 @@
       ],
       "default": "latest",
       "description": "Select or enter a version."
-    },
-    "installToolsForDotnet": {
-      "type": "boolean",
-      "description": "Install AWS Tools for .NET?",
-      "default": true
-    },
+    }
   },
   "customizations": {
     "vscode": {

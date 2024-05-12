@@ -22,25 +22,24 @@
       "moby": false,
       "dockerDashComposeVersion": "v2"
     },
+    "ghcr.io/devcontainers/features/aws-cli:1": {},
+    "./local-features/sam-cli": {},
+    "./local-features/serverless": {},
     "ghcr.io/devcontainers/features/node:1": {},
     "./local-features/np-install": {
       "packages": "serverless@latest"
     },
-    "ghcr.io/devcontainers/features/aws-cli:1": {},
-    "./local-features/serverless": {
-      "installToolsForDotnet": true
-    },
-
     "ghcr.io/dapr/cli/dapr-cli:0": {},
     "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
       "minikube": "none"
     },
-
     // Read more https://github.com/hashicorp/vscode-terraform/issues/1524#issuecomment-1614892272
     "ghcr.io/devcontainers/features/terraform:1": {
       "version": "latest",
       "tflint": "latest",
-      "terragrunt": "latest"
+      "terragrunt": "latest",
+      "installTFsec": true,
+      "installTerraformDocs": true
     }
   },
   "containerEnv": {
@@ -68,14 +67,8 @@
         "VisualStudioExptTeam.vscodeintellicode-insiders",
         "ms-dotnettools.vscode-dotnet-runtime",
         "ms-dotnettools.csharp",
-
-        // HINT: Installed via aws-cli feature.
-        // "AmazonWebServices.aws-toolkit-vscode",
-
-        // "ms-vscode.vscode-node-azure-pack",
         "ms-mssql.mssql",
         "humao.rest-client",
-
         "redhat.vscode-yaml",
         "editorconfig.editorconfig",
         "albert.tabout",
@@ -84,8 +77,9 @@
       ],
       // Set *default* container specific settings.json values on container create.
       "settings": {
-        "aws.telemetry": true,
-        "bicep.enableSurveys": false,
+        "aws.telemetry": false,
+        "amazonQ.telemetry": false,
+        "aws.samcli.enableCodeLenses": true,
         "redhat.telemetry.enabled": false,
         "rest-client.previewOption": "exchange",
         // Fix for ARM-based devices.
@@ -94,7 +88,6 @@
         "omnisharp.organizeImportsOnFormat": true,
         "omnisharp.useEditorFormattingSettings": true,
         "omnisharp.enableEditorConfigSupport": true,
-
         "razor.disabled": true
       }
     }
@@ -104,6 +97,13 @@
     "dev-certs": "dotnet dev-certs https --clean && dotnet dev-certs https -t",
     "clean": "rm -rf **/bin **/obj"
   },
+  // "mounts": [
+  //   {
+  //     "source": "${localEnv:HOME}${localEnv:USERPROFILE}/.aws/credentials",
+  //     "target": "/home/vscode/.aws/credentials",
+  //     "type": "bind"
+  //   }
+  // ]
   // Use 'postCreateCommand' to run commands after the container is created.
   // "postCreateCommand": {
   //   "init": "dapr init",
