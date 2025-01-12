@@ -27,7 +27,7 @@
       }
     }
   },
-  "installsAfter": [
-    "ghcr.io/devcontainers/features/aws-cli"
-  ]
+  "dependsOn": {
+    "ghcr.io/devcontainers/features/aws-cli": {}
+  }
 }

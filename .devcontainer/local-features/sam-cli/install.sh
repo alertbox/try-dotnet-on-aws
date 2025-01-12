@@ -7,8 +7,7 @@ SAM_VERSION=${VERSION:-"latest"}
 echo "Activating feature 'sam-cli@${SAM_VERSION}'"
 
 # The 'install.sh' entrypoint script is always executed as the root user.
-apt_get_update()
-{
+apt_get_update() {
     echo "Running apt-get update..."
     apt-get update -y
 }
