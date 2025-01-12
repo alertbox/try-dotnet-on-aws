@@ -2,7 +2,7 @@
   "name": ".NET on AWS",
   // See complete list https://hub.docker.com/_/microsoft-dotnet-sdk/
   // Or https://mcr.microsoft.com/v2/dotnet/sdk/tags/list
-  "image": "mcr.microsoft.com/dotnet/sdk:8.0-bookworm-slim",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [
     // Http
@@ -22,12 +22,12 @@
       "moby": false,
       "dockerDashComposeVersion": "v2"
     },
+    "ghcr.io/devcontainers/features/dotnet:2": "lts",
     "ghcr.io/devcontainers/features/aws-cli:1": {},
     "./local-features/sam-cli": {},
-    "./local-features/serverless": {},
     "ghcr.io/devcontainers/features/node:1": {},
     "./local-features/np-install": {
-      "packages": "serverless@latest"
+      "packages": "serverless@latest, aws-cdk@latest"
     },
     "ghcr.io/dapr/cli/dapr-cli:0": {},
     "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
@@ -37,9 +37,7 @@
     "ghcr.io/devcontainers/features/terraform:1": {
       "version": "latest",
       "tflint": "latest",
-      "terragrunt": "latest",
-      "installTFsec": true,
-      "installTerraformDocs": true
+      "terragrunt": "latest"
     }
   },
   "containerEnv": {
@@ -53,9 +51,6 @@
     "ASPNETCORE_URLS": "http://+:8080;https://+:8081",
     "ASPNETCORE_ENVIRONMENT": "Development"
   },
-  "remoteEnv": {
-    "TARGET": "net8.0"
-  },
   // Configure tool-specific properties.
   "customizations": {
     // Configure properties specific to VS Code.
@@ -63,10 +58,7 @@
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
         // Read more https://github.com/microsoft/vscode-dotnettools/issues/562
-        // "ms-dotnettools.csdevkit",
-        "VisualStudioExptTeam.vscodeintellicode-insiders",
-        "ms-dotnettools.vscode-dotnet-runtime",
-        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
         "ms-mssql.mssql",
         "humao.rest-client",
         "redhat.vscode-yaml",
@@ -77,6 +69,7 @@
       ],
       // Set *default* container specific settings.json values on container create.
       "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
         "aws.telemetry": false,
         "amazonQ.telemetry": false,
         "aws.samcli.enableCodeLenses": true,
