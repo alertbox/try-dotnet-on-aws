@@ -10,7 +10,7 @@
       "description": "Comma separated list of packages to install in system-wide."
     }
   },
-  "installsAfter": [
-    "ghcr.io/devcontainers/features/node"
-  ]
+  "dependsOn": {
+    "ghcr.io/devcontainers/features/node": {}
+  }
 }

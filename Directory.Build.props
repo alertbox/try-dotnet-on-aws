@@ -33,7 +33,7 @@
 	<Authors>Kosala Nuwan Perera</Authors>
 	<Company>Alertbox Inc.</Company>
 	<Copyright>Copyright (c) $([System.DateTime]::Now.ToString('yyyy')) $(Company)</Copyright>
-	<RepositoryUrl>https://github.com/alertbox/devcontainers-try-dotnet-stuff</RepositoryUrl>
+	<RepositoryUrl>https://github.com/alertbox/try-dotnet-on-aws</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
   </PropertyGroup>
 

@@ -9,19 +9,24 @@ echo "Activating feature 'np-install'."
 # The 'install.sh' entrypoint script is always executed as the root user.
 export DEBIAN_FRONTEND=noninteractive
 
-# If packages are requested, loop thru and install globally.
-if [ ${#NODE_PACKAGES[@]} -gt 0 ]; then
-    echo "Installing packages: ${NODE_PACKAGES}"
-    to_install=(`echo ${NODE_PACKAGES} | tr ',' ' '`)
+install_via_npm() {
+  local package=$1
+  echo "Installing package ${package}."
+  npm install -g "${package}"
+}
 
-    for i in "${to_install[@]}"
+install() {
+  if [ ${#NODE_PACKAGES[@]} -gt 0 ]; then
+    local to_install=(`echo ${NODE_PACKAGES} | tr ',' ' '`)
+    for package in "${to_install[@]}"
     do
-      if [ "$(npm list --global --depth 0 --omit dev | grep "${i}")" != "" ]; then
-        echo "${i} already exists. Skipping installation."
-        continue
-      fi
-
-      echo "Installing ${i}."
-      su ${_REMOTE_USER} -c "npm install -g ${i}" || continue
+      install_via_npm "${package}" || continue
     done
-fi
+  fi
+}
+
+echo "(*) Installation of Node.js packages ..."
+
+install
+
+echo "Done!"
