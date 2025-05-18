@@ -24,9 +24,9 @@
     },
     "ghcr.io/devcontainers/features/dotnet:2": "lts",
     "ghcr.io/devcontainers/features/aws-cli:1": {},
-    "./local-features/sam-cli": {},
+    "ghcr.io/alertbox/devcontainer-features/aws-sam-cli:1": {},
     "ghcr.io/devcontainers/features/node:1": {},
-    "./local-features/np-install": {
+    "ghcr.io/alertbox/devcontainer-features/npm-install:1": {
       "packages": "serverless@latest, aws-cdk@latest"
     },
     "ghcr.io/dapr/cli/dapr-cli:0": {},
@@ -34,11 +34,7 @@
       "minikube": "none"
     },
     // Read more https://github.com/hashicorp/vscode-terraform/issues/1524#issuecomment-1614892272
-    "ghcr.io/devcontainers/features/terraform:1": {
-      "version": "latest",
-      "tflint": "latest",
-      "terragrunt": "latest"
-    }
+    "ghcr.io/alertbox/devcontainer-features/opentofu:1": {}
   },
   "containerEnv": {
     // Set dotnet CLI environment settings.
