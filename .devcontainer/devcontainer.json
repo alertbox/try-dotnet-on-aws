@@ -25,10 +25,7 @@
     "ghcr.io/devcontainers/features/dotnet:2": "lts",
     "ghcr.io/devcontainers/features/aws-cli:1": {},
     "ghcr.io/alertbox/devcontainer-features/aws-sam-cli:1": {},
-    "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/alertbox/devcontainer-features/npm-install:1": {
-      "packages": "serverless@latest, aws-cdk@latest"
-    },
+    "ghcr.io/alertbox/devcontainer-features/bun:2": {},
     "ghcr.io/dapr/cli/dapr-cli:0": {},
     "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
       "minikube": "none"
