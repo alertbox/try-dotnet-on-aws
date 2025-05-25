@@ -24,14 +24,17 @@
     },
     "ghcr.io/devcontainers/features/dotnet:2": "lts",
     "ghcr.io/devcontainers/features/aws-cli:1": {},
-    "ghcr.io/alertbox/devcontainer-features/aws-sam-cli:1": {},
-    "ghcr.io/alertbox/devcontainer-features/bun:2": {},
+    "ghcr.io/alertbox/dotcontainers/sam:0": {},
+    "ghcr.io/devcontainers/features/node:1": "lts",
+    "ghcr.io/alertbox/dotcontainers/bun:0": {
+      "packages": "serverless cdk"
+    },
     "ghcr.io/dapr/cli/dapr-cli:0": {},
     "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
       "minikube": "none"
     },
     // Read more https://github.com/hashicorp/vscode-terraform/issues/1524#issuecomment-1614892272
-    "ghcr.io/alertbox/devcontainer-features/opentofu:1": {}
+    "ghcr.io/alertbox/dotcontainers/opentofu:0": {},
   },
   "containerEnv": {
     // Set dotnet CLI environment settings.
@@ -79,10 +82,10 @@
     }
   },
   // Use 'updateContentCommand' to run commands after the container is successfully created.
-  "updateContentCommand": {
-    "dev-certs": "dotnet dev-certs https --clean && dotnet dev-certs https -t",
-    "clean": "rm -rf **/bin **/obj"
-  },
+  // "updateContentCommand": {
+  //   "dev-certs": "dotnet dev-certs https --clean && dotnet dev-certs https -t",
+  //   "clean": "rm -rf **/bin **/obj"
+  // },
   // "mounts": [
   //   {
   //     "source": "${localEnv:HOME}${localEnv:USERPROFILE}/.aws/credentials",
