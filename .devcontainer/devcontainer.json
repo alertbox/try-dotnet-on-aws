@@ -65,27 +65,37 @@
       ],
       // Set *default* container specific settings.json values on container create.
       "settings": {
-        "terminal.integrated.defaultProfile.linux": "zsh",
-        "aws.telemetry": false,
         "amazonQ.telemetry": false,
+        "aws.telemetry": false,
         "aws.samcli.enableCodeLenses": true,
-        "redhat.telemetry.enabled": false,
-        "rest-client.previewOption": "exchange",
+        "debug.internalConsoleOptions": "neverOpen",
+        "diffEditor.diffAlgorithm": "advanced",
+        "diffEditor.experimental.showMoves": true,
+        "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
+        "dotnet.formatting.organizeImportsOnFormat": true,
+        "files.watcherExclude": {
+          "**/bin/**": true,
+          "**/obj/**": true
+        },
         // Fix for ARM-based devices.
         // Read more https://github.com/OmniSharp/omnisharp-vscode/issues/4348#issuecomment-1003867594
         "omnisharp.useModernNet": true,
         "omnisharp.organizeImportsOnFormat": true,
         "omnisharp.useEditorFormattingSettings": true,
         "omnisharp.enableEditorConfigSupport": true,
-        "razor.disabled": true
+        "razor.disabled": true,
+        "redhat.telemetry.enabled": false,
+        "rest-client.previewOption": "exchange",
+        "scm.defaultViewMode": "tree",
+        "terminal.integrated.defaultProfile.linux": "zsh",
       }
     }
   },
   // Use 'updateContentCommand' to run commands after the container is successfully created.
-  // "updateContentCommand": {
-  //   "dev-certs": "dotnet dev-certs https --clean && dotnet dev-certs https -t",
-  //   "clean": "rm -rf **/bin **/obj"
-  // },
+  "updateContentCommand": {
+    "dev-certs": "dotnet dev-certs https --clean && dotnet dev-certs https -t",
+    "clean": "rm -rf **/bin **/obj"
+  },
   // "mounts": [
   //   {
   //     "source": "${localEnv:HOME}${localEnv:USERPROFILE}/.aws/credentials",
@@ -94,8 +104,8 @@
   //   }
   // ]
   // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": {
-  //   "init": "dapr init",
-  //   "restore": "dotnet restore --no-cache --force"
-  // }
+  "postCreateCommand": {
+    "init": "dapr uninstall && dapr init || exit 0",
+    "restore": "dotnet restore --no-cache --force || exit 0"
+  }
 }
