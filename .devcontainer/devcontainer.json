@@ -24,9 +24,9 @@
     },
     "ghcr.io/devcontainers/features/dotnet:2": "lts",
     "ghcr.io/devcontainers/features/aws-cli:1": {},
-    "ghcr.io/alertbox/dotcontainers/sam:0": {},
+    "ghcr.io/alertbox/aws/sam:1": {},
     "ghcr.io/devcontainers/features/node:1": "lts",
-    "ghcr.io/alertbox/dotcontainers/bun:0": {
+    "ghcr.io/alertbox/oven-sh/bun:1": {
       "packages": "serverless cdk"
     },
     "ghcr.io/dapr/cli/dapr-cli:0": {},
@@ -34,7 +34,7 @@
       "minikube": "none"
     },
     // Read more https://github.com/hashicorp/vscode-terraform/issues/1524#issuecomment-1614892272
-    "ghcr.io/alertbox/dotcontainers/opentofu:0": {},
+    "ghcr.io/alertbox/opentofu/tofu:1": {}
   },
   "containerEnv": {
     // Set dotnet CLI environment settings.
@@ -68,6 +68,8 @@
         "amazonQ.telemetry": false,
         "aws.telemetry": false,
         "aws.samcli.enableCodeLenses": true,
+        "github.copilot.chat.agent.runTasks": true,
+        "github.copilot.chat.codeGeneration.useInstructionFiles": true,
         "debug.internalConsoleOptions": "neverOpen",
         "diffEditor.diffAlgorithm": "advanced",
         "diffEditor.experimental.showMoves": true,
@@ -77,13 +79,6 @@
           "**/bin/**": true,
           "**/obj/**": true
         },
-        // Fix for ARM-based devices.
-        // Read more https://github.com/OmniSharp/omnisharp-vscode/issues/4348#issuecomment-1003867594
-        "omnisharp.useModernNet": true,
-        "omnisharp.organizeImportsOnFormat": true,
-        "omnisharp.useEditorFormattingSettings": true,
-        "omnisharp.enableEditorConfigSupport": true,
-        "razor.disabled": true,
         "redhat.telemetry.enabled": false,
         "rest-client.previewOption": "exchange",
         "scm.defaultViewMode": "tree",
@@ -94,6 +89,7 @@
   // Use 'updateContentCommand' to run commands after the container is successfully created.
   "updateContentCommand": {
     "dev-certs": "dotnet dev-certs https --clean && dotnet dev-certs https -t",
+    "dapr-setup": "dapr uninstall --all && dapr init",
     "clean": "rm -rf **/bin **/obj"
   },
   // "mounts": [
@@ -105,7 +101,6 @@
   // ]
   // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": {
-    "init": "dapr uninstall && dapr init || exit 0",
     "restore": "dotnet restore --no-cache --force || exit 0"
   }
 }
