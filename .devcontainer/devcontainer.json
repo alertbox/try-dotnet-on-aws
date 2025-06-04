@@ -53,15 +53,28 @@
     "vscode": {
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
-        // Read more https://github.com/microsoft/vscode-dotnettools/issues/562
+        // .NET and C#
         "ms-dotnettools.csdevkit",
-        "ms-mssql.mssql",
+        // AWS and Kubernetes
+        "AmazonWebServices.aws-toolkit-vscode",
+        "AmazonWebServices.amazon-q-vscode",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "HashiCorp.terraform",
+        "mads-hartmann.bash-ide-vscode",
         "humao.rest-client",
+        // Db
+        "ms-mssql.mssql",
+        "ms-mssql.sql-database-projects-vscode",
+        // AI and Copilot
+        "GitHub.copilot",
+        // Misc.
+        "EditorConfig.EditorConfig",
         "redhat.vscode-yaml",
         "editorconfig.editorconfig",
         "albert.tabout",
         "streetsidesoftware.code-spell-checker",
         "redhat.fabric8-analytics"
+
       ],
       // Set *default* container specific settings.json values on container create.
       "settings": {
