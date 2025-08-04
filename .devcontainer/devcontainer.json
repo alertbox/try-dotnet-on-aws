@@ -24,15 +24,6 @@
     },
     "ghcr.io/devcontainers/features/dotnet:2": "lts",
     "ghcr.io/devcontainers/features/aws-cli:1": {},
-    "ghcr.io/alertbox/aws/sam:1": {},
-    "ghcr.io/devcontainers/features/node:1": "lts",
-    "ghcr.io/alertbox/oven-sh/bun:1": {
-      "packages": "serverless cdk"
-    },
-    "ghcr.io/dapr/cli/dapr-cli:0": {},
-    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
-      "minikube": "none"
-    },
     // Read more https://github.com/hashicorp/vscode-terraform/issues/1524#issuecomment-1614892272
     "ghcr.io/alertbox/opentofu/tofu:1": {}
   },
@@ -56,7 +47,6 @@
         // AWS and Kubernetes
         "AmazonWebServices.aws-toolkit-vscode",
         "AmazonWebServices.amazon-q-vscode",
-        "ms-kubernetes-tools.vscode-kubernetes-tools",
         "HashiCorp.terraform",
         "mads-hartmann.bash-ide-vscode",
         "humao.rest-client",
@@ -101,7 +91,6 @@
   // Use 'updateContentCommand' to run commands after the container is successfully created.
   "updateContentCommand": {
     "dev-certs": "dotnet dev-certs https --clean && dotnet dev-certs https -t",
-    "dapr-setup": "dapr uninstall --all && dapr init",
     "clean": "rm -rf **/bin **/obj"
   },
   // "mounts": [
