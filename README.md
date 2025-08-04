@@ -11,7 +11,6 @@ Start a dev container and get to developing .NET apps leveraging a [variety of A
 [aws-services-for-dotnet]: https://github.com/aws/dotnet#readme
 [aws-sdk-for-dotnet]: https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/welcome.html
 
-
 ## Quick Start
 
 [![Open in Dev Container](https://img.shields.io/static/v1?style=for-the-badge&label=Dev+Container&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/alertbox/try-dotnet-on-aws)
