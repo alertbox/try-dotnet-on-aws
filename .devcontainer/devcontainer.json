@@ -19,10 +19,9 @@
     },
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
-      "moby": false,
-      "dockerDashComposeVersion": "v2"
+      "moby": false
     },
-    "ghcr.io/devcontainers/features/dotnet:2": "lts",
+    "ghcr.io/devcontainers/features/dotnet:2": {},
     "ghcr.io/devcontainers/features/aws-cli:1": {},
     // Read more https://github.com/hashicorp/vscode-terraform/issues/1524#issuecomment-1614892272
     "ghcr.io/alertbox/opentofu/tofu:1": {}
@@ -44,37 +43,27 @@
       "extensions": [
         // .NET and C#
         "ms-dotnettools.csdevkit",
+        "humao.rest-client",
+        // Notebooks
+        "ms-dotnettools.dotnet-interactive-vscode",
         // AWS and Kubernetes
         "AmazonWebServices.aws-toolkit-vscode",
         "AmazonWebServices.amazon-q-vscode",
-        "HashiCorp.terraform",
         "mads-hartmann.bash-ide-vscode",
-        "humao.rest-client",
         // Db
         "ms-mssql.mssql",
         "ms-mssql.sql-database-projects-vscode",
-        // AI and Copilot
-        "GitHub.copilot",
         // Misc.
         "EditorConfig.EditorConfig",
         "redhat.vscode-yaml",
-        "editorconfig.editorconfig",
         "albert.tabout",
         "streetsidesoftware.code-spell-checker",
-        "redhat.fabric8-analytics",
-        // Notebooks
-        "ms-dotnettools.dotnet-interactive-vscode"
+        "redhat.fabric8-analytics"
       ],
       // Set *default* container specific settings.json values on container create.
       "settings": {
         "amazonQ.telemetry": false,
         "aws.telemetry": false,
-        "aws.samcli.enableCodeLenses": true,
-        "github.copilot.chat.agent.runTasks": true,
-        "github.copilot.chat.codeGeneration.useInstructionFiles": true,
-        "debug.internalConsoleOptions": "neverOpen",
-        "diffEditor.diffAlgorithm": "advanced",
-        "diffEditor.experimental.showMoves": true,
         "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
         "dotnet.formatting.organizeImportsOnFormat": true,
         "files.watcherExclude": {
@@ -82,16 +71,14 @@
           "**/obj/**": true
         },
         "redhat.telemetry.enabled": false,
-        "rest-client.previewOption": "exchange",
-        "scm.defaultViewMode": "tree",
         "terminal.integrated.defaultProfile.linux": "zsh",
       }
     }
   },
   // Use 'updateContentCommand' to run commands after the container is successfully created.
   "updateContentCommand": {
-    "dev-certs": "dotnet dev-certs https --clean && dotnet dev-certs https -t",
-    "clean": "rm -rf **/bin **/obj"
+    "dev-certs": "dotnet dev-certs https -t || exit 0",
+    "clean": "rm -rf **/bin **/obj || exit 0"
   },
   // "mounts": [
   //   {
