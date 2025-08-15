@@ -71,7 +71,7 @@
           "**/obj/**": true
         },
         "redhat.telemetry.enabled": false,
-        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.defaultProfile.linux": "zsh"
       }
     }
   },
@@ -80,13 +80,9 @@
     "dev-certs": "dotnet dev-certs https -t || exit 0",
     "clean": "rm -rf **/bin **/obj || exit 0"
   },
-  // "mounts": [
-  //   {
-  //     "source": "${localEnv:HOME}${localEnv:USERPROFILE}/.aws/credentials",
-  //     "target": "/home/vscode/.aws/credentials",
-  //     "type": "bind"
-  //   }
-  // ]
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws,target=/root/.aws,type=bind,consistency=cached"
+  ],
   // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": {
     "restore": "dotnet restore --no-cache --force || exit 0"
