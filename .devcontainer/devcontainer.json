@@ -1,7 +1,5 @@
 {
   "name": ".NET on AWS",
-  // See complete list https://hub.docker.com/_/microsoft-dotnet-sdk/
-  // Or https://mcr.microsoft.com/v2/dotnet/sdk/tags/list
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [
@@ -70,8 +68,18 @@
           "**/bin/**": true,
           "**/obj/**": true
         },
+        "cSpell.dictionaries": [
+          "ignore"
+        ],
+        "cSpell.dictionaryDefinitions": [
+          {
+            "name": "ignore",
+            "path": "${workspaceFolder}/.spellcheckignore"
+          }
+        ],
+        "cSpell.useGitignore": true,
         "redhat.telemetry.enabled": false,
-        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.defaultProfile.linux": "zsh"
       }
     }
   },
@@ -80,13 +88,9 @@
     "dev-certs": "dotnet dev-certs https -t || exit 0",
     "clean": "rm -rf **/bin **/obj || exit 0"
   },
-  // "mounts": [
-  //   {
-  //     "source": "${localEnv:HOME}${localEnv:USERPROFILE}/.aws/credentials",
-  //     "target": "/home/vscode/.aws/credentials",
-  //     "type": "bind"
-  //   }
-  // ]
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws,target=/root/.aws,type=bind,consistency=cached"
+  ],
   // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": {
     "restore": "dotnet restore --no-cache --force || exit 0"
