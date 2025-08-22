@@ -2,8 +2,8 @@
 
 Start a dev container and get to developing .NET apps leveraging a [variety of Amazon services (or AWS)][aws-services-for-dotnet].
 
-[<img width="100%" 
-      alt="AWS SDK for .NET" 
+[<img width="100%"
+      alt="AWS SDK for .NET"
       src="https://github.com/alertbox/try-dotnet-on-aws/assets/958227/befa373d-72c1-4816-ade8-3abba3016b45" />][aws-sdk-for-dotnet]
 
 [Learn more about AWS SDK for .NET][aws-sdk-for-dotnet]
@@ -17,7 +17,7 @@ Start a dev container and get to developing .NET apps leveraging a [variety of A
 
 You can also run this repo locally by following these repetitive steps:
 
-1. You want to ensure the repo is cloned to your local machine, and 
+1. You want to ensure the repo is cloned to your local machine, and
 2. Open it in VS Code.
 
 >  See [.NET Docker Images][dotnet-docker-images] for other variations that suites your hardware.
@@ -46,7 +46,5 @@ Have a suggestion or a bug fix? Just open a pull request or an issue. Include cl
 [devcontainers-repo]: https://github.com/devcontainers
 
 ## License
-
-Copyright &copy; The Alertbox, Inc. All rights reserved.
 
 The source code is license under the [MIT license](#MIT-1-ov-file).
