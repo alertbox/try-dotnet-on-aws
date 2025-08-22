@@ -21,7 +21,6 @@
     },
     "ghcr.io/devcontainers/features/dotnet:2": {},
     "ghcr.io/devcontainers/features/aws-cli:1": {},
-    // Read more https://github.com/hashicorp/vscode-terraform/issues/1524#issuecomment-1614892272
     "ghcr.io/alertbox/opentofu/tofu:1": {}
   },
   "containerEnv": {
@@ -42,7 +41,7 @@
         // .NET and C#
         "ms-dotnettools.csdevkit",
         "humao.rest-client",
-        // Notebooks
+        // Notebooks require >= .NET9
         "ms-dotnettools.dotnet-interactive-vscode",
         // AWS and Kubernetes
         "AmazonWebServices.aws-toolkit-vscode",
@@ -64,10 +63,6 @@
         "aws.telemetry": false,
         "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
         "dotnet.formatting.organizeImportsOnFormat": true,
-        "files.watcherExclude": {
-          "**/bin/**": true,
-          "**/obj/**": true
-        },
         "cSpell.dictionaries": [
           "ignore"
         ],
@@ -83,7 +78,6 @@
       }
     }
   },
-  // Use 'updateContentCommand' to run commands after the container is successfully created.
   "updateContentCommand": {
     "dev-certs": "dotnet dev-certs https -t || exit 0",
     "clean": "rm -rf **/bin **/obj || exit 0"
@@ -91,8 +85,7 @@
   "mounts": [
     "source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws,target=/root/.aws,type=bind,consistency=cached"
   ],
-  // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": {
-    "restore": "dotnet restore --no-cache --force || exit 0"
+    "restore": "dotnet restore || exit 0"
   }
 }
